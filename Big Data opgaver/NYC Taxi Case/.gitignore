@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+/data/raw/*.parquet
+/data/raw/*.csv
+/data/warehouse/*.duckdb
+/output/*
+!/output/.gitkeep
+!/data/raw/.gitkeep
+!/data/warehouse/.gitkeep

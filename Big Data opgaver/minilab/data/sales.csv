@@ -1,0 +1,19 @@
+sale_line_id,order_id,sale_date,product_id,product_name,category,brand,store_id,store_name,city,region,quantity,unit_price
+L001,O1001,2026-09-01,P001,Laptop Pro 14,Computers,NordTech,S01,Aarhus Tech Store,Aarhus,Midtjylland,1,8999
+L002,O1001,2026-09-01,P005,Wireless Mouse,Accessories,KeyLab,S01,Aarhus Tech Store,Aarhus,Midtjylland,1,399
+L003,O1002,2026-09-01,P003,Monitor 27,Monitors,ViewMax,S02,Aalborg Tech Store,Aalborg,Nordjylland,2,2199
+L004,O1003,2026-09-01,P004,Mechanical Keyboard,Accessories,KeyLab,S03,Odense Tech Store,Odense,Syddanmark,1,799
+L005,O1003,2026-09-01,P006,USB-C Dock,Accessories,Connectix,S03,Odense Tech Store,Odense,Syddanmark,1,1099
+L006,O1004,2026-09-02,P002,Laptop Air 13,Computers,NordTech,S01,Aarhus Tech Store,Aarhus,Midtjylland,1,6999
+L007,O1005,2026-09-02,P005,Wireless Mouse,Accessories,KeyLab,S02,Aalborg Tech Store,Aalborg,Nordjylland,3,399
+L008,O1005,2026-09-02,P004,Mechanical Keyboard,Accessories,KeyLab,S02,Aalborg Tech Store,Aalborg,Nordjylland,2,799
+L009,O1006,2026-09-02,P007,Webcam HD,Video,ViewMax,S03,Odense Tech Store,Odense,Syddanmark,2,649
+L010,O1007,2026-09-03,P003,Monitor 27,Monitors,ViewMax,S01,Aarhus Tech Store,Aarhus,Midtjylland,1,2199
+L011,O1007,2026-09-03,P006,USB-C Dock,Accessories,Connectix,S01,Aarhus Tech Store,Aarhus,Midtjylland,1,1099
+L012,O1008,2026-09-03,P001,Laptop Pro 14,Computers,NordTech,S02,Aalborg Tech Store,Aalborg,Nordjylland,1,8999
+L013,O1009,2026-09-03,P005,Wireless Mouse,Accessories,KeyLab,S03,Odense Tech Store,Odense,Syddanmark,2,399
+L014,O1010,2026-09-04,P002,Laptop Air 13,Computers,NordTech,S03,Odense Tech Store,Odense,Syddanmark,1,6999
+L015,O1010,2026-09-04,P003,Monitor 27,Monitors,ViewMax,S03,Odense Tech Store,Odense,Syddanmark,1,2199
+L016,O1011,2026-09-04,P004,Mechanical Keyboard,Accessories,KeyLab,S01,Aarhus Tech Store,Aarhus,Midtjylland,1,799
+L017,O1011,2026-09-04,P005,Wireless Mouse,Accessories,KeyLab,S01,Aarhus Tech Store,Aarhus,Midtjylland,1,399
+L018,O1012,2026-09-04,P007,Webcam HD,Video,ViewMax,S02,Aalborg Tech Store,Aalborg,Nordjylland,2,649
