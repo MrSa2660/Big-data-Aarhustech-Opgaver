@@ -93,6 +93,19 @@ def run_step(con: duckdb.DuckDBPyConnection, name: str, sql_path: Path, step_no:
     print(f"    OK: {name} færdig ({len(statements)} statements)")
 
 
+def scalar(con: duckdb.DuckDBPyConnection, sql: str) -> int:
+    """Hent ét enkelt tal fra en query.
+
+    fetchone() kan returnere None (hvis der slet ingen rækker er), og SUM()
+    returnerer NULL på en tom tabel. Begge dele håndteres her, så resten af
+    koden altid får et tal.
+    """
+    row = con.execute(sql).fetchone()
+    if row is None or row[0] is None:
+        return 0
+    return int(row[0])
+
+
 def verify(con: duckdb.DuckDBPyConnection) -> None:
     """Kontrollér resultatet efter et build og vis rækketal pr. tabel."""
     print("\nKontrol efter build:")
@@ -103,12 +116,12 @@ def verify(con: duckdb.DuckDBPyConnection) -> None:
         raise PipelineError(f"Disse tabeller blev ikke bygget: {', '.join(missing)}")
 
     for table in EXPECTED_TABLES:
-        antal = con.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
+        antal = scalar(con, f"SELECT COUNT(*) FROM {table}")
         print(f"    {table:<22} {antal:>12,} rækker")
 
     # Afstemning: aggregatet skal indeholde lige så mange ture som fact_trip.
-    ture_fact = con.execute("SELECT COUNT(*) FROM fact_trip").fetchone()[0]
-    ture_agg = con.execute("SELECT SUM(antal_ture) FROM agg_trip_daily_zone").fetchone()[0]
+    ture_fact = scalar(con, "SELECT COUNT(*) FROM fact_trip")
+    ture_agg = scalar(con, "SELECT SUM(antal_ture) FROM agg_trip_daily_zone")
     status = "OK" if ture_fact == ture_agg else "AFVIGELSE"
     print(f"    ture i fact = {ture_fact:,} / ture i aggregate = {ture_agg:,}  -> {status}")
     if ture_fact != ture_agg:
